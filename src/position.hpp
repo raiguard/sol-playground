@@ -20,8 +20,10 @@ public:
 
   constexpr std::partial_ordering operator<=>(const Position& other) const = default;
 
-  std::string str() { return std::format("Position({}, {})", this->x, this->y); }
+  std::string str() { return std::format("{}({}, {})", Position::objectName, this->x, this->y); }
 
   double x = 0;
   double y = 0;
+
+  static const char* objectName;
 };

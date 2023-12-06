@@ -2,9 +2,11 @@
 #include <format>
 #include <sol/state.hpp>
 
+const char* Position::objectName = "Position";
+
 void Position::bind(sol::state& lua) {
   auto constructors = sol::constructors<Position(), Position(double), Position(double, double)>();
-  sol::usertype<Position> binder = lua.new_usertype<Position>("Position", constructors);
+  sol::usertype<Position> binder = lua.new_usertype<Position>(Position::objectName, constructors);
   binder.set("x", &Position::x);
   binder.set("y", &Position::y);
   binder.set("__add", &Position::operator+);
