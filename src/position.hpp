@@ -18,6 +18,8 @@ public:
   Position operator*(const Position& other) { return Position(this->x * other.x, this->y * other.y); }
   Position operator/(const Position& other) { return Position(this->x / other.x, this->y / other.y); }
 
+  constexpr std::partial_ordering operator<=>(const Position& other) const = default;
+
   std::string str() { return std::format("Position({}, {})", this->x, this->y); }
 
   double x = 0;

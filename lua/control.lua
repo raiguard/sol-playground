@@ -7,6 +7,11 @@ Events.on_init(function()
 
   local mod = Position.new(4, 4) % Position.new(3, 4)
   print(mod)
+
+  print(Position.new(4, 4) == Position.new(4, 4))
+  print(Position.new(4, 4) <= Position.new(4, 4))
+  print(Position.new(4, 4) < Position.new(4, 4))
+  print(Position.new(4, 4.01) > Position.new(4, 4))
 end)
 
 --- @param other Position
