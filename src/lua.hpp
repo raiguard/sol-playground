@@ -1,5 +1,4 @@
 #pragma once
-#define SOL_ALL_SAFETIES_ON 1
 #include <sol/state.hpp>
 
 class Lua {
@@ -9,7 +8,8 @@ public:
 
   void init();
 
-private:
   sol::state lua;
   sol::optional<sol::function> onInit;
+  sol::optional<sol::function> onPlayerCreated;
+  sol::optional<sol::function> onTick;
 };
