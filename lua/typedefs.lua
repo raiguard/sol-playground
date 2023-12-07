@@ -1,9 +1,9 @@
 --- @meta
 
 --- @class Position
+--- @operator add(Position): Position
 --- @field x number
 --- @field y number
---- @operator add(Position): Position
 Position = {
   --- @param x number?
   --- @param y number?
